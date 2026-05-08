@@ -3,8 +3,8 @@ from django.urls import path , include
 from .import views
 
 router = DefaultRouter()
-router.register(r'llmodels', views.LLMModelViewset)
-router.register(r'prompts',views.promptViewSet)
+router.register(r'llmodels', views.LLModelviewset)
+router.register(r'prompts',views.PromptViewSet)
 router.register(r'outputs',views.OutputViewSet)
 router.register(r'evalution', views.EvalutionViewSet)
 

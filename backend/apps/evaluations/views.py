@@ -19,7 +19,7 @@ class PromptViewSet (viewsets.ModelViewSet):
     
     
 class OutputViewSet (viewsets.ModelViewSet):
-    queryset = Output.objects,all()
+    queryset = Output.objects.all()
     serializer_class = OutputSerializer
     
 class EvalutionViewSet(viewsets.ModelViewSet):
