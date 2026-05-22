@@ -1,13 +1,12 @@
 import axios from 'axios'
 
 const API = axios.create({
-    baseURL: 'http//localhost:8000',
+    baseURL: 'http://localhost:8000',
 })
 
-//LLM Models
-
-export const getLLMModel = () => API.get('/api/llmmodels')
-export const createLLMModel = (data: any) => API.post('api/llmodel/',data)  
+// LLM Models
+export const getLLMModels = () => API.get('/api/llmmodels/')
+export const createLLMModel = (data: any) => API.post('/api/llmmodels/', data)
 
 // Prompts 
 export const getPrompts = () => API.get('/api/prompts')
