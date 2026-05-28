@@ -28,26 +28,32 @@ const Home = () => {
       })
   }, [])
 
-  if (loading) return <h2 style={{textAlign:'center'}}>Loading...</h2>
+  if (loading) return (
+    <div className="flex justify-center items-center h-screen">
+      <p className="text-xl font-bold text-gray-500">Loading...</p>
+    </div>
+  )
 
   return (
-    <div style={{ padding: '20px', fontFamily: 'Arial' }}>
-      <h1>🤖 LLM Models</h1>
-      <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
+    <div className="p-8 bg-gray-100 min-h-screen">
+      <h1 className="text-3xl font-bold text-center mb-8 text-blue-600">
+        🤖 LLM Models
+      </h1>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {models.length === 0 ? (
-          <p>Koi data nahi hai!</p>
+          <p className="text-center text-gray-500">Koi data nahi hai!</p>
         ) : (
           models.map((model: LLMModel) => (
-            <div key={model.id} style={{
-              border: '1px solid #ccc',
-              borderRadius: '8px',
-              padding: '16px',
-              width: '200px',
-              boxShadow: '2px 2px 8px rgba(0,0,0,0.1)'
-            }}>
-              <h2>{model.name}</h2>
-              <p>Provider: {model.provider}</p>
-              <p>Status: {model.is_active ? '✅ Active' : '❌ Inactive'}</p>
+            <div key={model.id}
+              className="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition">
+              <h2 className="text-xl font-bold text-gray-800">{model.name}</h2>
+              <p className="text-gray-500 mt-2">Provider: {model.provider}</p>
+              <p className="mt-2">
+                Status: {model.is_active
+                  ? <span className="text-green-500 font-bold">✅ Active</span>
+                  : <span className="text-red-500 font-bold">❌ Inactive</span>
+                }
+              </p>
             </div>
           ))
         )}
