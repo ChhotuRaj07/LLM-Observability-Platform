@@ -164,3 +164,8 @@ CORS_ALLOWED_ORIGINS = [
     'http://localhost:5173',   # React Vite
     'http://localhost:3000',   # React CRA
 ]
+
+# LLM API Keys
+OPENAI_API_KEY = env('OPENAI_API_KEY', default='')
+GEMINI_API_KEY = env('GEMINI_API_KEY', default='')
+GROQ_API_KEY = env('GROQ_API_KEY', default='')

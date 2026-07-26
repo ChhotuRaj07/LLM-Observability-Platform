@@ -9,7 +9,8 @@ router.register(r'outputs',views.OutputViewSet)
 router.register(r'evalution', views.EvalutionViewSet)
 
 urlpatterns = [
-    path('',include(router.urls))
+    path('',include(router.urls)),
+     path('compare/', views.CompareView.as_view()),
 ]
 
 
