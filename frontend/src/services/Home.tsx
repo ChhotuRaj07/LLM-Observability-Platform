@@ -50,8 +50,8 @@ const Home = () => {
               <p className="text-gray-500 mt-2">Provider: {model.provider}</p>
               <p className="mt-2">
                 Status: {model.is_active
-                  ? <span className="text-green-500 font-bold">✅ Active</span>
-                  : <span className="text-red-500 font-bold">❌ Inactive</span>
+                  ? <span className="text-green-500 font-bold"> Active</span>
+                  : <span className="text-red-500 font-bold"> Inactive</span>
                 }
               </p>
             </div>

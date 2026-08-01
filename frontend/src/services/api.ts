@@ -21,3 +21,10 @@ export const getOutputs = () => API.get('/api/outputs')
 export const getEvaluations = () => API.get('/api/evalutions')
 
 export default API;
+
+
+
+// Froentend 
+// Compare LLMs
+export const compareLLMs = (prompt: string) => 
+  API.post('/api/compare/', { prompt })
