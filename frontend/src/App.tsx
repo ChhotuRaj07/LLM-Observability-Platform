@@ -1,24 +1,17 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import AuthForm from './pages/Login'
 import Compare from './pages/Compare'
+
 
 function App() {
   return (
-    <div>
-      <Compare />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<AuthForm />} />
+        <Route path="/compare" element={<Compare />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
-export default App
-
-// import Home from "./services/Home";
-
-// function App() {
-  
-// return(
-//   <div>
-//     <Home />
-//   </div>
-// )
-// }
-
-// export default App;
+export default App;

@@ -1,17 +1,18 @@
 import {useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 // I create a Login Page for User Authentication 
 export default function AuthForm() {
+    const navigate = useNavigate(); 
     const [isSignup, setIsSignup] = useState(false);
     const [email , setEmail] = useState("");
     const [password, setpassword]= useState("");
     const [error, setError] = useState("");
     const [loading , setLoading] = useState(false);
 
-async function handleSubmit(e) {
+    async function handleSubmit(e) {
     e.preventDefault();
     setError("");   
-}
 
     if (!email || !password) {
         setError("Please Fill Both Fields ");
@@ -24,14 +25,17 @@ async function handleSubmit(e) {
 
     setLoading(true);
     try {
-        await new Promise((r) => setTimeout(r,8000));
+        await new Promise((r) => setTimeout(r,800));
 
-        alert ('${isSignup ? "Signed up": "Logged in"}as ${email}');
+        alert (`${isSignup ? "Signed up": "Logged in"}as ${email}`);
+        navigate("/Compare");
     }catch (err) {
         setError(err.message || "Something went wrong ");
     } finally {
         setLoading(false); 
     }
+}    
+
 
 
     return (
@@ -143,7 +147,14 @@ const styles = {
     cursor: "pointer",
     textDecoration: "underline",
   },
+  
 };
+
+
+
+
+
+
 
  
 
